@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Inventory</string>
+    <string name="empty_view_title_text">Inventory is empty</string>
+    <string name="empty_view_subtitle_text">Click button on the right bottom to add an item.</string>
+    <string name="detail_activity_title_new_item">Add an item</string>
+    <string name="detail_activity_title_edit_item">Edit item</string>
+    <string name="category_overview">Product name</string>
+    <string name="hint_item_name">Product name</string>
+    <string name="category_price">Price</string>
+    <string name="hint_item_price">Price</string>
+    <string name="unit_item_price">€</string>
+    <string name="category_quantity">Quantity</string>
+    <string name="editor_insert_item_failed">Error with saving item.</string>
+    <string name="editor_insert_item_succes">Item saved.</string>
+    <string name="editor_update_item_failed">Error with updating item.</string>
+    <string name="editor_update_item_succes">Item updated.</string>
+    <string name="action_save">Save</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_supplier">Order more</string>
+    <string name="delete_dialog_msg">Delete this item?</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="unsaved_changes_dialog_msg">Discard your changes and quit editing?</string>
+    <string name="discard">Discard</string>
+    <string name="keep_editing">Keep editing</string>
+    <string name="editor_delete_item_failed">Error with deleting item</string>
+    <string name="editor_delete_item_success">Item deleted</string>
+    <string name="fields_required">All fields need to be populated!</string>
+    <string name="reduce_by_one">Quantity reduced by 1.</string>
+    <string name="cant_reduce_zero">Quantity is 0 and can\'t be reduced.</string>
+    <string name="suitable_app_failed">No suitable app found!</string>
+    <string name="add_a_photo">Add a photo</string>
+    <string name="take_a_photo">Take a photo</string>
+</resources>

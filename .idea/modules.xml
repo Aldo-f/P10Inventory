@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Inventory.iml" filepath="$PROJECT_DIR$/Inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P10Inventory.iml" filepath="$PROJECT_DIR$/P10Inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P10Inventory.iml" filepath="$PROJECT_DIR$/P10Inventory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P10Inventory-master.iml" filepath="$PROJECT_DIR$/P10Inventory-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inventory-master-3095d6fd1bdabd3ad28908f64d756042a89ff63b.iml" filepath="$PROJECT_DIR$/inventory-master-3095d6fd1bdabd3ad28908f64d756042a89ff63b.iml" />
+    </modules>
+  </component>
+</project>
