@@ -27,7 +27,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -42,13 +41,9 @@ import com.aldofieuw.android.inventory.data.ItemContract;
 
 import java.io.File;
 import java.io.FileDescriptor;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import static com.aldofieuw.android.inventory.data.ItemProvider.LOG_TAG;
 
 public class DetailActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -57,9 +52,9 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
     private static final int PICK_IMAGE_REQUEST = 0;
     private static final int REQUEST_IMAGE_CAPTURE = 1;
     private static final int MY_PERMISSIONS_REQUEST = 2;
+    String mCurrentPhotoPath;
     private Uri mUri;
     private Bitmap mBitmap;
-    String mCurrentPhotoPath;
     private ImageView mImageView;
     private Button mButtonTakePicture;
     private boolean isgalleryPicture = false;
@@ -271,6 +266,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
                 return image;
             }
         } catch (Exception e) {
+            e.printStackTrace();
             return null;
         } finally {
             try {
@@ -282,7 +278,6 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
             }
         }
     }
-
 
     private void increaseQuantity() {
         String quantityString;
@@ -384,7 +379,7 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
                 "?cc=" + "me@example.com" +
                 "&subject=" + Uri.encode(subject) +
                 "&body=" + Uri.encode(bodyText);
-      
+
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
         emailIntent.setData(Uri.parse(mailto));
 
@@ -507,7 +502,15 @@ public class DetailActivity extends AppCompatActivity implements LoaderManager.L
             if (!photo.isEmpty()) {
                 mUri = Uri.parse(photo);
                 mBitmap = getBitmapFromUri(mUri);
-                mImageView.setImageBitmap(mBitmap);
+
+                ViewTreeObserver viewTreeObserver = mImageView.getViewTreeObserver();
+                viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                    @Override
+                    public void onGlobalLayout() {
+                        mImageView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                        mImageView.setImageBitmap(mBitmap);
+                    }
+                });
             }
         }
     }
